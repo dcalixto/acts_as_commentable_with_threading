@@ -62,8 +62,7 @@ module Acts #:nodoc:
       end
       
       def comments?
-        commentable = base_class.name.to_s
-        return true if Comment.where(commentable_id: self.id, commentable_type: commentable).limit(1).first
+        return true if Comment.where(commentable_id: self.id, commentable_type: self.class.name).limit(1).first
         return false
       end
       
