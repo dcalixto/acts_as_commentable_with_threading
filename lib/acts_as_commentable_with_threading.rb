@@ -41,6 +41,12 @@ module Acts #:nodoc:
         Comment.where(user_id: user.id, commentable_type: commentable)
           .order('created_at DESC')
       end
+      
+      def comments?
+        commentable = base_class.name.to_s
+        return true if Comment.where(commentable_id: self.id, commentable_type: commentable).limit(1).first
+        return false
+      end
     end
 
     module LocalInstanceMethods
