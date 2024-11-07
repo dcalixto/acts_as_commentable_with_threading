@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'activerecord', '>= 4.0'
   s.add_dependency 'activesupport', '>= 4.0'
   s.add_dependency 'awesome_nested_set', '>= 3.0'
+  s.add_dependency 'pagy', '~> 8.4.0'
 end
